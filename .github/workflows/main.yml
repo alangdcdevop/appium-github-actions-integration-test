@@ -37,7 +37,7 @@ jobs:
 
     - name: Install the Emulator 4
       run: |
-        appium driver install flutter
+        appium driver install --source=npm appium-flutter-driver
 
     - name: Install the Emulator 5
       run: |
