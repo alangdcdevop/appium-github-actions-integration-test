@@ -21,15 +21,30 @@ jobs:
         distribution: 'temurin'
         java-version: 11
         cache: 'gradle'
-    - name: Install the Emulator
+    - name: Install the Emulator 1
       run: |
         # chmod +x ./scripts/RunAppiumServer.sh
         # ./scripts/RunAppiumServer.sh
         npm install -g appium@next
+        
+    - name: Install the Emulator 2
+      run: |
         appium driver install xcuitest
+
+    - name: Install the Emulator 3
+      run: |
         appium driver install espresso
+
+    - name: Install the Emulator 4
+      run: |
         appium driver install flutter
+
+    - name: Install the Emulator 5
+      run: |
         appium -v
+
+    - name: Install the Emulator 2
+      run: |        
         appium --log appium.log &>/dev/null &
       shell: bash   
     - name: Run Appium Tests
