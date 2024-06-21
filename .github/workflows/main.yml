@@ -23,8 +23,14 @@ jobs:
         cache: 'gradle'
     - name: Install the Emulator
       run: |
-        chmod +x ./scripts/RunAppiumServer.sh
-        ./scripts/RunAppiumServer.sh
+        # chmod +x ./scripts/RunAppiumServer.sh
+        # ./scripts/RunAppiumServer.sh
+        npm install -g appium@next
+        appium driver install xcuitest
+        appium driver install espresso
+        appium driver install flutter
+        appium -v
+        appium --log appium.log &>/dev/null &
       shell: bash   
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v2.27.0
